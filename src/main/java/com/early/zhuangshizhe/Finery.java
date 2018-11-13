@@ -1,7 +1,7 @@
 package com.early.zhuangshizhe;
 
 /**
- * 服饰类
+ * 服饰类  集成Person类
  */
 public class Finery extends Person{
     protected Person component;
