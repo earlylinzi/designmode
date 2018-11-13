@@ -7,6 +7,7 @@ public class BigTrouser extends Finery{
 
     @Override
     public void show() {
+
         System.out.print("OverSize 的裤子   ");
         super.show();
     }
