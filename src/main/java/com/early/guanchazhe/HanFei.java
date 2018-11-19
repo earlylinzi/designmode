@@ -1,9 +1,6 @@
 package com.early.guanchazhe;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
-import java.util.Observer;
 
 /**
  * 具体的被观察者  韩非类
