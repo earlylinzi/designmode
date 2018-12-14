@@ -12,10 +12,10 @@ public class WanXiaoYunClient {
 
         Map<String, String> sPara = new HashMap<String, String>();
         sPara.put("appkey", "O2N6V9HDEFTJPEKA0SRAX4E0262VGQZB");
-        sPara.put("personId", "f76c80eb5f8c4680a323f469051b7888");
+        sPara.put("personId", "110108198010013009");
         String currentTime = String.valueOf(System.currentTimeMillis());
         sPara.put("timestamp", currentTime);
-        sPara.put("name", "总管理员");
+        sPara.put("name", "赵新盼");
         sPara.put("userType", "1");
         sPara.put("orgId", "430921");
         sPara.put("orgName", "清华同方测试学校");
