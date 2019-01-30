@@ -22,12 +22,6 @@ public class Client {
 
         System.out.println("职责：");
         root.lineDuty();
-
-
-
-
     }
-
-
 
 }
