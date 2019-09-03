@@ -9,25 +9,51 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.text.ParseException;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class main {
 
 
     public static void main(String[] args) throws Exception {
 
-        downResourceAndUpload();
-
-//        getmymMethod2();
-//            String url = "http://www.shuxuejia.com/index.html";
-//        String encode = URLEncoder.encode(url, "utf-8");
-//        System.out.println(encode);
-
-//        System.out.println(new BigDecimal(2.99999F).setScale(1,BigDecimal.ROUND_HALF_DOWN).floatValue());
+        Integer i = null;
+        System.out.println(1 == i);
 
 
     }
+
+    private void m1(Object o) {
+        System.err.println("object");
+    }
+    private void m1(String s) {
+        System.err.println("string");
+    }
+
+
+
+
+
+
+
+
+
+
+
+    private static String  getRegionCodeFromSource(String source){
+        if(null == source){
+            return null;
+        }
+        int index = source.lastIndexOf("_");
+        return source.substring(index+1, source.length());
+    }
+
+
+
+
+
+
     public static void downResourceAndUpload() throws Exception {
         String realPath = "http://thirdwx.qlogo.cn/mmopen/vi_32/BgHpE3jibeScydvZYH4N0gwlacibzNzXh6L1nu0e9vhaEZUFzAiaGDrM6uTCA81BlDz99Ebjjk1ZNJB42PTxOL3uw/132";
 
