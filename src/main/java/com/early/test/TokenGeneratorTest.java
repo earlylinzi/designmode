@@ -1,7 +1,7 @@
 package com.early.test;
 
 
-import com.whty.apigateway.security.EncryptionUtils;
+
 
 /**
  * ****************************************************************************************
@@ -29,12 +29,12 @@ public class TokenGeneratorTest {
 		String appid = "eleimlKpzLh5X8LPDIUnDDjOF7xXaRDf";
 		String appkey = "Biq7iMzfWqdhgEK89DNHmn4GTAg0JefY";
 		String ts=new Long(System.currentTimeMillis()).toString();
-//		String ts = "1400232822323";
-		System.out.println("ts:" + ts);
-		String paramValues = appid + appkey + ts;
-		byte[] hmacSHA = EncryptionUtils.getHmacSHA1(paramValues, appkey);
-		String digest = EncryptionUtils.bytesToHexString(hmacSHA);
-		digest = digest.toUpperCase();
-		System.out.println("digest:" + digest);
+////		String ts = "1400232822323";
+//		System.out.println("ts:" + ts);
+//		String paramValues = appid + appkey + ts;
+//		byte[] hmacSHA = EncryptionUtils.getHmacSHA1(paramValues, appkey);
+//		String digest = EncryptionUtils.bytesToHexString(hmacSHA);
+//		digest = digest.toUpperCase();
+//		System.out.println("digest:" + digest);digest
 	}
 }
