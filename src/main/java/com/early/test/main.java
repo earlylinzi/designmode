@@ -4,26 +4,88 @@ import com.early.util.DateUtil;
 
 
 import java.io.*;
-import java.math.BigDecimal;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.text.ParseException;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.concurrent.Callable;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class main {
 
+    static class User{
+        private int age;
+        private String name;
 
+        public User(int age, String name) {
+            this.age = age;
+            this.name = name;
+        }
+
+        public int getAge() {
+            return age;
+        }
+
+        public void setAge(int age) {
+            this.age = age;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
+
+
+    /**
+     * list = list.stream().peek(x -> {
+     *     if (x.getDateLong == 20191023){
+     *         x.getTimeList.set(new TimeModel(aaa,bbb));
+     *     }
+     * }).collect(Collectors.toList());
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
 
-        Integer i = null;
-        System.out.println(1 == i);
+
+
+
+
+
+
+//        List<User> users = getSource();
+////        users.stream().peek(x->{
+////           if(x.getAge()== 5){
+////               x.setName("Jim");
+////           }
+////        });
+//
+////        List<Integer> collect = users.stream().map(item -> item.getAge()).collect(Collectors.toList());
+////        Map<String,User> map = new HashMap<>();
+////        users.stream().forEach(user->map.put(user.getName(),user));
+////        Map<String, User> userMap = users.stream().collect(Collectors.toMap(User::getName, Function.identity()));
+////        Map<String, User> userMap = users.stream().collect(Collectors.toMap(User::getName, user->user));
+//
+//        users.forEach(n->{
+//
+//        });
 
 
     }
 
+    private static List<User> getSource(){
+        ArrayList<User> users = new ArrayList<>();
+        for (int i = 1; i < 10; i++) {
+            users.add(new User(i,"lucy"+i));
+        }
+        return users;
+    }
     private void m1(Object o) {
         System.err.println("object");
     }
