@@ -3,6 +3,7 @@ package com.early.test;
 import com.early.util.DateUtil;
 
 
+import javax.jnlp.IntegrationService;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -15,7 +16,7 @@ import java.util.stream.Collectors;
 
 public class main {
 
-    static class User{
+    static class User {
         private int age;
         private String name;
 
@@ -44,14 +45,23 @@ public class main {
 
     /**
      * list = list.stream().peek(x -> {
-     *     if (x.getDateLong == 20191023){
-     *         x.getTimeList.set(new TimeModel(aaa,bbb));
-     *     }
+     * if (x.getDateLong == 20191023){
+     * x.getTimeList.set(new TimeModel(aaa,bbb));
+     * }
      * }).collect(Collectors.toList());
+     *
      * @param args
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
+
+
+        Integer[] arr = {2, 3, 4, 5, 6, 7, 8, 9, 10};
+        List<Integer> ints = new ArrayList<Integer>(Arrays.asList(arr));
+
+        System.out.println(ints.subList(0,2));
+        System.out.println(ints.subList(2,3));
+        System.out.println(ints.subList(5,7));
 
 
 
@@ -79,48 +89,37 @@ public class main {
 
     }
 
-    private static List<User> getSource(){
+    private static List<User> getSource() {
         ArrayList<User> users = new ArrayList<>();
         for (int i = 1; i < 10; i++) {
-            users.add(new User(i,"lucy"+i));
+            users.add(new User(i, "lucy" + i));
         }
         return users;
     }
+
     private void m1(Object o) {
         System.err.println("object");
     }
+
     private void m1(String s) {
         System.err.println("string");
     }
 
 
-
-
-
-
-
-
-
-
-
-    private static String  getRegionCodeFromSource(String source){
-        if(null == source){
+    private static String getRegionCodeFromSource(String source) {
+        if (null == source) {
             return null;
         }
         int index = source.lastIndexOf("_");
-        return source.substring(index+1, source.length());
+        return source.substring(index + 1, source.length());
     }
-
-
-
-
 
 
     public static void downResourceAndUpload() throws Exception {
         String realPath = "http://thirdwx.qlogo.cn/mmopen/vi_32/BgHpE3jibeScydvZYH4N0gwlacibzNzXh6L1nu0e9vhaEZUFzAiaGDrM6uTCA81BlDz99Ebjjk1ZNJB42PTxOL3uw/132";
 
         URL url = new URL(realPath);
-        HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
         conn.setConnectTimeout(5 * 1000);
         InputStream inStream = conn.getInputStream();//通过输入流获取图片数据
@@ -130,7 +129,7 @@ public class main {
 
         byte[] buffer = new byte[1024];
         int len = 0;
-        while( (len=inStream.read(buffer)) != -1 ){
+        while ((len = inStream.read(buffer)) != -1) {
             outStream.write(buffer, 0, len);
         }
         inStream.close();
@@ -138,11 +137,11 @@ public class main {
 
     }
 
-    public static byte[] readInputStream(InputStream inStream) throws Exception{
+    public static byte[] readInputStream(InputStream inStream) throws Exception {
         ByteArrayOutputStream outStream = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
         int len = 0;
-        while( (len=inStream.read(buffer)) != -1 ){
+        while ((len = inStream.read(buffer)) != -1) {
             outStream.write(buffer, 0, len);
         }
         inStream.close();
@@ -150,33 +149,31 @@ public class main {
     }
 
 
-
-
-    private static void getmymMethod2()  {
-        Float i= 278.0F;
+    private static void getmymMethod2() {
+        Float i = 278.0F;
         Integer g = 10;
         boolean flag = false;
-        for (int j = 0; j < 1000000 ; j++) {
+        for (int j = 0; j < 1000000; j++) {
             float v = i / g;
             String result = String.valueOf(v);
-            if(result.length() > 4){
+            if (result.length() > 4) {
                 flag = true;
                 System.out.println(result);
             }
         }
-        if(flag){
+        if (flag) {
 
-        }else{
+        } else {
             System.out.println("没有结果");
         }
 
     }
 
-    private static void getmymMethod()  {
+    private static void getmymMethod() {
         //计算过期时间
         Date annualFeeEffectiveTime = new Date();
         long time = annualFeeEffectiveTime.getTime();
-        long endTime = time + (((int)365) * (24 * 60 * 60 *1000L));
+        long endTime = time + (((int) 365) * (24 * 60 * 60 * 1000L));
         Date experdTimeD = new Date(endTime);
         String expiredTime = null;
         try {
